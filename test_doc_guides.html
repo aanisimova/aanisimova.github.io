@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://integration.unlimint.com/favicon.ico" sizes="any" type="image/ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Unlimint Integration API</title>
+
+    <!-- Elements: Web Component -->
+    <script src="https://unpkg.com/@stoplight/elements-dev-portal/web-components.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@stoplight/elements-dev-portal/styles.min.css">
+
+    <!-- Twitter Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Twitter Bootstrap: Sticky Footer Example -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/sticky-footer-navbar.css">
+    <link rel="stylesheet" href="main_styles.css">
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      main {
+        flex: 1 0 0;
+        overflow: hidden;
+      }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="https://www.unlimint.com/wp-content/themes/unlimint/assets/images/logo.svg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/git_projects/docs_stoplight/test_doc_guides.html">Integration Guides<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/git_projects/docs_stoplight/test_api_reference.html">API Reference<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://documenter.getpostman.com/view/10451813/SzKSTzVu" target="_blank">Postman Collection<span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main">
+    <elements-stoplight-project
+            projectId="cHJqOjE1NzY5MQ"
+            router="hash"
+    ></elements-stoplight-project>
+</main>
+
+</body>
+</html>
