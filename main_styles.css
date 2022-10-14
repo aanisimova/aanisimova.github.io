@@ -9,7 +9,9 @@
 .BaseURLContent+div,
 .BaseURLContent+div+div,
 .svg-inline--fa.fa-cloud.sl-icon,
-div.sl-overflow-y-hidden.sl-rounded-lg{
+div.sl-overflow-y-hidden.sl-rounded-lg,
+sl-panel.sl-outline-none.BaseURLContent.sl-inverted.sl-w-full.sl-rounded-lg
+{
     display: none;
 }
 
