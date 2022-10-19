@@ -10,7 +10,8 @@
 .BaseURLContent+div+div,
 .svg-inline--fa.fa-cloud.sl-icon,
 div.sl-overflow-y-hidden.sl-rounded-lg,
-sl-panel.sl-outline-none.BaseURLContent.sl-inverted.sl-w-full.sl-rounded-lg
+sl-panel.sl-outline-none.BaseURLContent.sl-inverted.sl-w-full.sl-rounded-lg,
+sl-stack.sl-stack--vertical.sl-stack--6.sl-flex.sl-flex-col.sl-items-stretch
 {
     display: none;
 }
@@ -22,4 +23,30 @@ sl-panel.sl-outline-none.BaseURLContent.sl-inverted.sl-w-full.sl-rounded-lg
 
 a {
     color: black
+}
+
+.nav-item.active .nav-link {
+    position: relative;
+    font-weight: 500;
+}
+.nav-item.active .nav-link::after {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #C9F73A;
+}
+.navbar-external-link {
+    font-weight: 500;
+    padding: 8px 16px;
+    background-color: #C9F73A;
+    border-radius: 4px;
+    transition: .2s;
+}
+.navbar-external-link:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
 }
