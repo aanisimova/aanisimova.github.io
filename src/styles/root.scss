@@ -1,0 +1,38 @@
+#root {
+  height: calc(100vh - 81px);
+  @include media-breakpoint-up(tablet) {
+    height: calc(100vh - 97px);
+  }
+}
+
+.sl-elements {
+  div.sl-elements-api {
+    div.sl-flex {
+      div.sl-flex {
+        // display: none;
+
+        @include media-breakpoint-up(tablet) {
+          display: flex;
+        }
+      }
+    }
+    div.sl-px-24 {
+      padding-left: 12px;
+      padding-right: 12px;
+
+      @include media-breakpoint-up(tablet) {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  }
+
+  .sl-markdown-viewer-toc {
+    button {
+      display: none;
+      @include media-breakpoint-up(desktop-s) {
+        display: flex;
+      }
+    }
+  }
+}

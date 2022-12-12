@@ -1,0 +1,15 @@
+/* прячем блоки */
+.BaseURLContent
+.BaseURLContent+div,
+.BaseURLContent+div+div,
+.svg-inline--fa.fa-cloud.sl-icon,
+div.sl-overflow-y-hidden.sl-rounded-lg,
+div.sl-outline-none.BaseURLContent.sl-inverted.sl-w-full.sl-rounded-lg
+{
+    display: none;
+}
+
+/* опускаем пониже кнопки рядом с объектом Responses */
+#Responses+div {
+    margin-top: 4px;
+}
