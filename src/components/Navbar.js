@@ -1,9 +1,17 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
-// import { Search } from './Search';
+import { Search } from './Search';
+import { useEffect } from 'react';
 
 const Navbar = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
+    const [baseSlug, setBaseSlug] = useState('');
+
+    let location = useLocation();
+
+    useEffect(() => {
+        setBaseSlug(location.pathname.split('/').slice(1, 2).toString())
+    }, [location.pathname])
 
     return (
         <header>
@@ -15,9 +23,6 @@ const Navbar = () => {
                     <button onClick={() => { setMobileMenu(!mobileMenu) }} className={`navbar-icons_burger ${mobileMenu && 'expanded'}`}></button>
                 </div>
                 {mobileMenu && <ul className="nav-list_mobile">
-                    {/* <li className="nav-item">
-                        <Search projectIds={''} />
-                    </li> */}
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/doc-guides">Integration Guides</NavLink>
                     </li>
@@ -32,14 +37,15 @@ const Navbar = () => {
                     </li>
                 </ul>}
                 <ul className="nav-list_desktop">
-                    {/* <li className="nav-item">
-                        <Search projectIds={''} />
-                    </li> */}
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/doc-guides">Integration Guides</NavLink>
+                    <li className="nav-item search">
+                        {baseSlug === 'doc-guides' && <Search projectIds={['cHJqOjE1NzY5MQ']} baseSlug={[baseSlug]} />}
+                        {baseSlug === 'api-reference' && <Search projectIds={['cHJqOjE1NzY5Mw']} baseSlug={[baseSlug]} />}
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/api-reference">API Reference</NavLink>
+                        <NavLink className="nav-link" to="/doc-guides" onClick={() => setBaseSlug('doc-guides')}>Integration Guides</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/api-reference" onClick={() => setBaseSlug('api-reference')}>API Reference</NavLink>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="https://documenter.getpostman.com/view/10451813/SzKSTzVu" target="_blank" rel="noreferrer">Postman Collection</a>

@@ -1,19 +1,17 @@
 import type { NodeSearchResult } from "@stoplight/elements-dev-portal";
-import { Search as ElementsSearch, useGetNodes, useGetWorkspace } from "@stoplight/elements-dev-portal";
+import { Search as ElementsSearch, useGetNodes } from "@stoplight/elements-dev-portal";
 import * as React from "react";
 
 export type SearchProps = {
   projectIds: string[];
+  baseSlug: string[];
 };
 
-export const Search = ({ projectIds }: SearchProps) => {
+export const Search = ({ projectIds, baseSlug }: SearchProps) => {
   const [search, setSearch] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const { data } = useGetNodes({
     search,
-    projectIds,
-  });
-  const { data: workspace } = useGetWorkspace({
     projectIds,
   });
 
@@ -23,12 +21,12 @@ export const Search = ({ projectIds }: SearchProps) => {
   };
 
   const handleClick = (data: NodeSearchResult) => {
-    window.location.href = `https://${workspace?.workspace.slug}.stoplight.io/docs/${data.project_slug}${data.uri}`;
+    window.location.href = `../${baseSlug}/${data.slug}`;
   };
 
   return (
     <>
-      <input placeholder="Search..." style={{ color: "white" }} onFocus={() => setOpen(true)} />
+      <input placeholder="" onFocus={() => setOpen(true)} />
       <ElementsSearch search={search} onSearch={setSearch} onClick={handleClick} onClose={handleClose} isOpen={open} searchResults={data} />
     </>
   );
