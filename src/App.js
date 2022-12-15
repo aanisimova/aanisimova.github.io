@@ -10,22 +10,22 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exact path='/new' >
-            <Redirect to='/new/doc-guides' />
+          <Route exact path='/' >
+            <Redirect to='/doc-guides' />
           </Route>
-          <Route path='/new/doc-guides' >
+          <Route path='/doc-guides' >
             <StoplightProject
               projectId="cHJqOjE1NzY5MQ"
-              basePath="/new/doc-guides"
+              basePath="/doc-guides"
               router="history"
               collapseTableOfContents="true"
               hideMocking="true"
             />
           </Route>
-          <Route path='/new/api-reference' >
+          <Route path='/api-reference' >
             <StoplightProject
               projectId="cHJqOjE1NzY5Mw"
-              basePath="/new/api-reference"
+              basePath="/api-reference"
               router="history"
               collapseTableOfContents="true"
               hideMocking="true"
